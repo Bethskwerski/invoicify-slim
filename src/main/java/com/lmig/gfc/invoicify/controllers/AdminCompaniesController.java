@@ -20,6 +20,8 @@ public class AdminCompaniesController {
 	@GetMapping("")
 	public ModelAndView showDefault() {
 		ModelAndView mv = new ModelAndView("admin/companies/default");
+		
+		mv.addObject("companies", companyRepo.findAll());
 		return mv;
 	}
 

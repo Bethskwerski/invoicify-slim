@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="invoicify_role")
 public class Role {
@@ -19,6 +21,7 @@ public class Role {
 	@Column(nullable = false)
 	private String name;
 	
+	@JsonIgnore
 	@ManyToOne(optional = false)
 	private User user;
 
